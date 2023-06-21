@@ -1,0 +1,121 @@
+.todo-add-main{
+
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+
+}
+
+.todo-add-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    backdrop-filter: blur(8px);
+    transition: all 3s ease-in-out;
+
+    
+}
+
+.todo-add-overlay.show{
+    opacity: 1;
+}
+
+.todo-add-modal{
+    background-color: white;
+    width:450px;
+    position: relative;
+    z-index: 50;
+    border-radius: 5px;
+    padding: 25px;
+
+    
+}
+
+
+.todo-add-modal-title{
+    font-size: 24px;
+}
+
+.todo-add-modal-content{
+    display: flex;
+    flex-direction: column;
+    
+}
+.todo-add-modal-header > button{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top:20px;
+    right: 25px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.todo-add-modal-task{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    max-width: fit-content;
+    border-radius: 5px;
+    color: #f8fafc;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    font-weight: 400;
+    }
+
+    .todo-add-modal-tasklist{
+        display: flex;
+        gap: 0px 15px;
+        padding: 25px 0px;
+    }
+
+    .todo-add-modal-form-control{
+        display: flex;
+        flex-direction: column;
+        gap: 8px 0;
+        margin: 15px 0;
+
+        
+    }
+
+
+    .todo-add-modal-form-label{
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .todo-add-modal-form-input{
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        resize: none;
+    }
+#todo-add-modal-form-submit{
+
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    background-color: #11009E;
+    color:white;
+    cursor: pointer;
+
+}
+    

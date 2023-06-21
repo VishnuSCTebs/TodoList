@@ -1,0 +1,32 @@
+<div class="todo-list-main">
+    <h1 class="todo-list-title">Upcoming Tasks</h1>
+
+
+    <div class="todo-list-taskList">
+                <div *ngFor="let task of tasks; index as i;" class="todo-list-taskcard" [ngStyle]="{backgroundColor:'#2563eb'}">
+
+                    <div class="todo-list-taskcard-id">
+                        #{{i+1}}
+                    </div>
+
+                    <div class="todo-list-taskcard-content">
+                      <h3 class="todo-list-tasktitle">{{task.title}}</h3>
+                      <div>
+                        Starts on
+                          
+                        <span>
+                            {{task.date|date:'fullDate'}}
+                        </span>
+                        <span>
+                            {{task.time}}
+                        </span>
+                      </div>
+                      
+                </div>
+       
+    </div>
+ 
+</div>
+
+</div>
+

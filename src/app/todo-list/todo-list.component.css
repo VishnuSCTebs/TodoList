@@ -1,0 +1,68 @@
+.todo-list-main{
+    width: 100%;
+    padding: 50px;
+    border-radius: 5px;
+
+}
+
+.todo-list-tasklist{
+    display: grid;
+    grid-template-columns:repeat(8,1fr)
+
+}
+
+.todo-list-title{
+    font-size: 24px;
+}
+
+
+.todo-list-taskList{
+    margin: 30px 0px;
+    padding: 25px 0px;
+
+}
+
+
+.todo-list-taskcard{
+    display: flex;
+    padding: 50px;
+    border-radius: 5px;
+    width: 450px;
+    gap: 0px 15px;
+    cursor: pointer;
+    position: relative;
+    filter: drop-shadow(5px 5px 5px #94a3b8);
+    
+}
+.todo-list-taskcard-id{
+    font-size: 54px;
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    color: #e5e7eb;
+}
+
+.todo-list-task-icon{
+    width: 32px;
+    height: 32px;
+}
+
+.todo-list-tasktitle{
+    color: #f1f5f9;
+}
+
+.todo-list-taskcard-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    color: #e2e8f0;
+    
+}
+
+.todo-list-taskcard-content > div > svg{
+    width: 24px;
+    height: 24px;
+    
+}
