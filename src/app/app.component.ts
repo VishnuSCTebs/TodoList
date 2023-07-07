@@ -21,8 +21,9 @@ export class AppComponent {
   }
 
   addTask(task:Task):void{
+    console.log("before",this.tasks)
     console.log(task)
     this.tasks.push(task)
-    console.log(this.tasks)
+    console.log("after",this.tasks)
   }
 }

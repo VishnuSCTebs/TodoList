@@ -17,7 +17,7 @@ export class TodoAddComponent {
   taskTypes:TaskList[]=[{
     id:'001',
     name:'Work',
-    icon:'',
+    icon:'/assets/icons/work.svg',
     color:'#2563eb'
   },
   {
@@ -72,11 +72,14 @@ export class TodoAddComponent {
   }
 
 
-  onTaskSave() {
-    
+  onTaskSave(e:Event) {
+    e.preventDefault()
     this.saveTaskEvent.emit(this.task)
     this.closeModalEvent.emit()
-
+    this.task.title=''
+    this.task.description=''
+    this.task.date=new Date(),
+    this.task.time=''
   }
 
   onTaskTypeClick(taskType: TaskList) {
@@ -85,7 +88,6 @@ export class TodoAddComponent {
     this.task.id=taskType.id,
     this.task.icon=taskType.icon
     console.log(this.task)
-    
   }
 
 
