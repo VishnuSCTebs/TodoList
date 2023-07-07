@@ -17,25 +17,25 @@ export class TodoAddComponent {
   taskTypes:TaskList[]=[{
     id:'001',
     name:'Work',
-    icon:'/assets/icons/work.svg',
+    icon:'assets/icons/work.svg',
     color:'#2563eb'
   },
   {
     id:'002',
     name:'Health',
-    icon:'',
+    icon:'assets/icons/health.svg',
     color:'#10b981'
   }
 ,
 {
   id:'003',
   name:'Learn',
-  icon:'',
+  icon:'assets/icons/learn.svg',
   color:'#7c3aed'
 },{
   id:'004',
   name:'Hobby',
-  icon:'',
+  icon:'assets/icons/hobby.svg',
   color:'#f43f5e'
 }];
 
@@ -55,31 +55,13 @@ export class TodoAddComponent {
   }
 
 
-  onChangeName(e:any) {
-    this.task.title= e.target.value
-  }
-
-  onChangeDescription(e:any) {
-    this.task.description= e.target.value
-  }
-
-  onChangeDate(e:any) {
-    this.task.date= e.target.value
-  }
-
-  onChangeTime(e:any) {
-    this.task.time= e.target.value
-  }
 
 
-  onTaskSave(e:Event) {
-    e.preventDefault()
+
+  onTaskSave() {
     this.saveTaskEvent.emit(this.task)
     this.closeModalEvent.emit()
-    this.task.title=''
-    this.task.description=''
-    this.task.date=new Date(),
-    this.task.time=''
+    
   }
 
   onTaskTypeClick(taskType: TaskList) {

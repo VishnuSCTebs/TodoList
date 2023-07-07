@@ -28,13 +28,13 @@
 }
 
 .todo-add-modal{
-    background-color: white;
+    background-color: #f1f5f9;
     width:450px;
     position: relative;
     z-index: 50;
     border-radius: 5px;
     padding: 25px;
-
+    box-shadow: 2px 1px  2px 2px #f3f4f6;
     
 }
 
@@ -63,17 +63,17 @@
 
 .todo-add-modal-task{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    width: 240px;
     font-size: 12px;
-    max-width: fit-content;
     border-radius: 5px;
     color: #f8fafc;
     border: none;
     outline:none;
     cursor: pointer;
     font-weight: 400;
+    padding: 10px;
+    gap: 0px 10px;
+    align-items: center;
     }
 
     .todo-add-modal-tasklist{
@@ -104,7 +104,7 @@
         border-radius: 5px;
         resize: none;
     }
-#todo-add-modal-form-submit{
+.todo-add-modal-form-submit{
 
     display: block;
     width: 100%;
@@ -118,4 +118,12 @@
     cursor: pointer;
 
 }
+
+
+.todo-add-modal-form-submit > button[disabled=false] {
+
+    color: yellow;
+
+}
+
     

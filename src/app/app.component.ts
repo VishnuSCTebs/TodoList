@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Task } from './todo.interface';
+import { Task } from './todo/todo.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +7,5 @@ import { Task } from './todo.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TodoList';
-  showAddModal:boolean=false
-  tasks:Task[]=[]
 
-
-  showAdd():void{
-    this.showAddModal=true
-  }
-
-  hideAdd():void{
-    this.showAddModal=false
-  }
-
-  addTask(task:Task):void{
-    console.log("before",this.tasks)
-    console.log(task)
-    this.tasks.push(task)
-    console.log("after",this.tasks)
-  }
 }

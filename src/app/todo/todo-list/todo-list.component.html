@@ -3,7 +3,7 @@
 
 
     <div class="todo-list-taskList">
-                <div *ngFor="let task of tasks; index as i;" class="todo-list-taskcard" [ngStyle]="{backgroundColor:'#2563eb'}">
+                <div *ngFor="let task of tasks; index as i;" class="todo-list-taskcard" [ngStyle]="{backgroundColor:task?.color?task?.color:'#2563eb'}">
 
                     <div class="todo-list-taskcard-id">
                         #{{i+1}}

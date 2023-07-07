@@ -1,0 +1,82 @@
+<div class="todo-add-main" *ngIf="show">
+        <div class="todo-add-overlay"></div>
+
+
+        <div class="todo-add-modal">
+            
+            <div class="todo-add-modal-header">
+            <h1 class="todo-add-modal-title">Add Task</h1>
+            
+
+
+         {{task | json}}
+
+            {{taskForm?.pristine }}
+            {{taskForm?.dirty }}
+            {{taskForm?.valid }}
+            {{taskForm?.invalid}}
+            {{taskForm?.value | json}}
+
+            
+
+            <button type="button" (click)="closeAddModal()">
+                <span></span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </button>
+            
+            </div>
+
+
+            <div class="todo-add-modal-content">
+
+            <div class="todo-add-modal-tasklist">
+            <button type="button" *ngFor="let type of taskTypes;"  class="todo-add-modal-task" [ngStyle]="{'backgroundColor':this.task.id==type?.id?'#f1f5f9':type?.color,color:this.task.id==type?.id?'#000':'white',border:this.task.id==type?.id?'2px solid #000':'2px solid white'}" (click)="onTaskTypeClick(type)" >
+                    <span>{{type.name}}</span>
+                    <img [src]="type?.icon" [ngStyle]="{'width':'20px','height':'20px','color':'yellow'}"/>
+            </button>
+
+
+        </div>
+
+        <form class="todo-add-modal-form" (ngSubmit)="onTaskSave()" #taskForm="ngForm">
+
+            <div class="todo-add-modal-form-control">
+                    <span class="todo-add-modal-form-label">Task Name</span>
+                    <input type="text" class="todo-add-modal-form-input" required  [(ngModel)]="task.title" name="taskName" />
+                </div>
+
+                <div class="todo-add-modal-form-control">
+                    <span class="todo-add-modal-form-label" >Task Description</span>
+                    <textarea rows="8" class="todo-add-modal-form-input" required  [(ngModel)]="task.description" name="taskDescription" resize="none"></textarea>
+                </div>
+            
+
+                <div class="todo-add-modal-form-control">
+                    <span class="todo-add-modal-form-label">Task Start</span>
+                    <div [ngStyle]="{'display':'flex','gap':'0px 15px'}">
+                    <input type="date" class="todo-add-modal-form-input" required [(ngModel)]="task.date" name="taskDate" />
+                    <input type="time" class="todo-add-modal-form-input" required [(ngModel)]="task.time" name="taskTime" />
+                    <input type="checkbox" class="todo-add-modal-form-input"/>
+                </div>
+
+
+                </div>
+            
+
+                <button  type="submit" disabled="taskForm?.invalid"  [ngClass]="{'todo-add-modal-form-submit':taskForm.invalid}">
+                    <span>Save</span>
+                </button>
+
+        </form>
+
+
+        
+
+
+        </div>
+
+
+        </div>
+</div>
